@@ -1,0 +1,19 @@
+apiVersion: v1
+kind: Service
+metadata:
+  creationTimestamp: null
+  labels:
+    app.kubernetes.io/created-by: application-service
+    app.kubernetes.io/instance: hello-secret
+    app.kubernetes.io/managed-by: kustomize
+    app.kubernetes.io/name: hello-secret
+    app.kubernetes.io/part-of: hello-secret
+  name: hello-secret
+spec:
+  ports:
+  - port: 3000
+    targetPort: 3000
+  selector:
+    app.kubernetes.io/instance: hello-secret
+status:
+  loadBalancer: {}
